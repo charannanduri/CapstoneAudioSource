@@ -112,8 +112,14 @@ This project assumes you use **Thonny** for editing and debugging CircuitPython 
 
 ## 2. Hardware setup
 
+If you would like to forgo the PCB and make the device on a perf board the wiring diagram is here:
+![Wiring Diagram](images/wiringdiagram.png)
+
+For the PCB:
+<br>
 ![PCB Top View](images/PCBTop.png)
 ![PCB Top View w/ Parts Placed](images/PCBwParts.png)
+
 
 ### 2.1 Plugging in the RP2040 board
 
@@ -181,8 +187,12 @@ Keep speaker impedance and power handling within the amplifier’s specs.
 3. Use the **power slide switch** (`SW2` near the converter) to turn the system on or off:
    - **ON** – converter enabled, RP2040 and LEDs power up.
    - **OFF** – everything is unpowered.
+**NOTE** Depending on the battery pack you choose, the pack itself may have a power switch.**
 
 4. When the board is on, the **POWER LED** (near the pushbutton) and the LED on `A2` should be lit solid.
+
+For boards with faulty / non working buck boosts werecommend using the VERTER 5V buck boost from Adafruit.
+This will require a on / off switch on the battery holder. Wire the battery to VIN on the board and wire the output to VOUT and GND on the Power tap of the PCB.
 
 ---
 
@@ -226,7 +236,7 @@ The RP2040 device will mount as a drive called CIRCUITPY.
    - POWER LED should light up.
 
 4. **Start playback**
-   - Press and release the central button (`SW1`).
+   - Press and release the button (`SW1`).
    - The RP2040 starts playing `audio.wav` via the DAC and amplifier.
    - The PLAYBACK LED flashes while the file is playing.
 
