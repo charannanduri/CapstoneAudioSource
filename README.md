@@ -3,6 +3,7 @@
 <br>ECE 3906/4905 SP25 - AU25
 <br>Professor: Mark Andrews
 <br>Team Members: Charan Nanduri, D'Andre Williams, Adnan Abdullah
+<br> for any quesitons regarding the project please email: nanduri.9@osu.edu or charan.n@me.com
 
 # User Guide
 # An RP2040 based, AA Battery Powered Audio Player
