@@ -107,7 +107,7 @@ Follow these steps for **either** the QtPy 2040 or the Xiao RP2040.
    - Copy your chosen file to the `CIRCUITPY` drive and rename it to **`code.py`**.
    - Copy your audio file:
      - Default firmware expects a file named **`audio.wav`** in the root of `CIRCUITPY`.
-     - Use 16-bit PCM WAV (mono or stereo) for best compatibility.
+     - Use 16-bit PCM WAV (mono) for best compatibility.
    - (Optional) If you want to use MP3 instead of WAV:
      - Copy your MP3 (for example `audio1.mp3`) to `CIRCUITPY`.
      - In `code.py`, comment out the `audio.wav` line and uncomment the `audiomp3.MP3Decoder` line.
@@ -202,7 +202,7 @@ The I²S pins from the RP2040 are already wired on the PCB to this DAC header.
    - **AIN−** (audio ground from DAC)
 3. Connect your speaker:
    - Use the speaker screw terminals or header on the PAM8302A board **or**
-   - Use the on-board 3.5 mm jack / speaker header (J6) if populated.
+   - Use the on-board 3.5 mm jack / speaker header.
 
 Keep speaker impedance and power handling within the amplifier’s specs.
 
@@ -221,9 +221,9 @@ Keep speaker impedance and power handling within the amplifier’s specs.
    - **OFF** – everything is unpowered.
 **NOTE** Depending on the battery pack you choose, the pack itself may have a power switch.**
 
-4. When the board is on, the **POWER LED** (near the pushbutton) and the LED on `A2` should be lit solid.
+4. When the board is on, the **POWER LED** should be lit solid.
 
-For boards with faulty / non working buck boosts werecommend using the VERTER 5V buck boost from Adafruit.
+For boards with faulty / non working buck boosts we recommend using the VERTER 5V buck boost from Adafruit.
 This will require a on / off switch on the battery holder. Wire the battery to VIN on the board and wire the output to VOUT and GND on the Power tap of the PCB.
 
 ---
@@ -255,6 +255,8 @@ The RP2040 device will mount as a drive called CIRCUITPY.
 
 1. **Load your audio**
    - Copy `audio.wav` (or your own WAV/MP3 as configured) to the root of the `CIRCUITPY` drive.
+   - You can use any 16-bit PCM WAV file that fits in the device (a little less than 8MB Flash).
+   - Keep in mind the firmware loops the audio until the button is pressed again to stop it, so a short (3-5s) clip of music works best. 
    - Confirm `code.py` is present and saved.
 
 2. **Assemble the hardware**
