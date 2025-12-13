@@ -31,8 +31,8 @@ The custom PCB breaks everything out and adds:
 - `code_qtpy2040.py` – CircuitPython firmware for the **Adafruit QtPy RP2040**
 - `code_xiao2040.py` – CircuitPython firmware for the **Seeeduino Xiao RP2040**
 - `audio.wav` – example audio file
-- `docs/` – images and diagrams
-- `hardware/` – KiCad/PCB design files
+- `images/` – images and diagrams
+- `hardware/` – KiCad/Fusion design files
 
 **When deploying to the board, please rename the appropriate firmware file to **`code.py`**.**
 
@@ -112,9 +112,8 @@ This project assumes you use **Thonny** for editing and debugging CircuitPython 
 
 ## 2. Hardware setup
 
-> The PCB image below is a placeholder – replace with your actual photos and diagrams.
-
-![PCB Top View](docs/images/pcb-top.png)
+![PCB Top View](images/PCBTop.png)
+![PCB Top View w/ Parts Placed](images/PCBwParts.png)
 
 ### 2.1 Plugging in the RP2040 board
 
@@ -162,12 +161,12 @@ The I²S pins from the RP2040 are already wired on the PCB to this DAC header.
    - **VCC**
    - **GND**
    - **AIN+ / AIN** (audio in from DAC)
-   - **AIN−** (if used, depending on breakout variant)
+   - **AIN−** (audio ground from DAC)
 3. Connect your speaker:
    - Use the speaker screw terminals or header on the PAM8302A board **or**
    - Use the on-board 3.5 mm jack / speaker header (J6) if populated.
 
-Keep speaker impedance and power handling within the amplifier’s specs (typical classroom demo speaker is fine).
+Keep speaker impedance and power handling within the amplifier’s specs.
 
 ---
 
@@ -208,6 +207,10 @@ The behavior matches the firmware:
 
 ## 3. Using the audio player
 
+Unplug the battery from the device. before plugging in the USB.
+PLug in a usb-c data cable to the RP2040, and to your computer.
+The RP2040 device will mount as a drive called CIRCUITPY.
+
 1. **Load your audio**
    - Copy `audio.wav` (or your own WAV/MP3 as configured) to the root of the `CIRCUITPY` drive.
    - Confirm `code.py` is present and saved.
@@ -237,10 +240,10 @@ The audio file loops from the beginning each time you start playback.
 
 ## 4. Connection diagrams and photos
 
-> These are placeholders – replace with your actual diagrams and photos in the `docs/` folder.
 
 - **System-level connection diagram**
+![Wiring Diagram](images/wiringdiagram.png)
+![System Diagram](images/systemdiagram.png)
+![PCB with Parts Placed](images/PCBwParts.png)
+![PCB with Power system Bypassed for Verter board](images/PCBcorrected.png)
 
-  ```text
-  [Battery Pack] → [Buck/Boost Converter] → [RP2040 Board]
-                                         → [PCM5100A DAC] → [PAM8302A Amp] → [Speaker / Jack]
