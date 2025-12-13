@@ -11,6 +11,37 @@ This repository contains the hardware (PCB, Schematic, CAD files) and firmware f
 
 It is intended for use with the Paper Speaker project found here: https://u.osu.edu/anderson-67/outreach/speaker/
 
+## Parts List & Purchase Links
+
+Below are all components required for the project.  
+You may **either** purchase the DAC and amplifier separately **or** use the combined MAX98357A DAC/Amp board.
+
+### Microcontroller
+- **QtPy RP2040**  
+  https://www.adafruit.com/product/4900
+
+
+### Option 1: Separate DAC + Amplifier
+- **PCM5100A DAC**  
+  https://www.adafruit.com/product/6251  
+- **PAM8302A 4Ω Audio Amplifier**  
+  https://www.adafruit.com/product/2130
+
+
+### Option 2: Combined DAC + Amplifier
+- **MAX98357A DAC / Amplifier Combo**  
+  https://www.adafruit.com/product/3006
+
+### Additional Components
+- **3.5mm Audio Jack (SJ1-3523N)**  
+  https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/SJ1-3523N/738689  
+- **VERTER 5V Buck-Boost Regulator**  
+  https://www.adafruit.com/product/2190  
+- **4×AA Battery Pack (with On/Off Switch)**  
+  https://www.adafruit.com/product/830
+
+---
+
 The custom PCB breaks everything out and adds:
 
 - On-board buck/boost converter for 4x AA battery power input
