@@ -43,7 +43,7 @@ while True:
 
     # 3. Detect "Edge": Did button go from High (released) to Low (pressed)?
     if current_button_val is False and last_button_val is True:
-        # A tiny sleep just for debounce is okay (20ms is imperceptible)
+        # A tiny sleep just for debounce
         time.sleep(0.02)
         if button.value is False:
             if playing:
@@ -58,9 +58,9 @@ while True:
     # Save current button state for the next loop comparison
     last_button_val = current_button_val
 
-    # 4. Handle LED Blinking (Non-Blocking)
+    # 4. Handle LED Blinking
     if playing:
-        # Check if enough time has passed since the last toggle
+        # Debounce
         if now - last_led_time >= LED_INTERVAL:
             led.value = not led.value
             last_led_time = now
